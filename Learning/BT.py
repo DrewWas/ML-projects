@@ -1,8 +1,25 @@
 from selenium import webdriver
-import time
+from time import sleep
+import pyautogui
 
-browser = webdriver.Safari()
-url = "https://www.miniclip.com/games/bubble-trouble/en/#privacy-settings"
-browser.get(url)
-browser.maximize_window()
-browser.execute_script("window.scrollTo(0,document.body.scrollHeight)")
+#x coordinates - (57, 1856)
+#y coordinates - (500, 1374)
+
+
+def setup():
+    driver = webdriver.Safari()
+    url = "https://www.miniclip.com/games/bubble-trouble/en/#privacy-settings"
+    driver.get(url)
+    driver.maximize_window()
+    driver.find_element_by_xpath('//button[contains(text(), "OK")]').click()
+    sleep(1)
+    driver.execute_script("window.scrollTo(0, 300)") 
+    sleep(10)
+    pyautogui.moveTo(300,700)
+    pyautogui.click()
+    print("click")
+    sleep(10)
+
+
+setup()
+
