@@ -15,10 +15,10 @@ def setup():
     sleep(1)
     driver.execute_script("window.scrollTo(0, 300)") 
     sleep(10)
-    pyautogui.moveTo(300,700)
+    pyautogui.moveTo(400,400)
     pyautogui.click()
     print("click")
-    sleep(10)
+    sleep(50)
 
 
 setup()
